@@ -1,6 +1,7 @@
 #Vpc
 output "vpc_id" {
-  value = aws_vpc.main.id
+  description = "The ID of the VPC"
+  value       = aws_vpc.main.id
 }
 
 locals {
@@ -20,9 +21,11 @@ locals {
 }
 #subnet
 output "public_subnet_ids" {
-  value = local.public_subnet_output
+  description = "Map of public subnet keys to their IDs and availability zones"
+  value       = local.public_subnet_output
 }
 
 output "private_subnet_ids" {
-  value = local.private_subnet_output
+  description = "Map of private subnet keys to their IDs and availability zones"
+  value       = local.private_subnet_output
 }
